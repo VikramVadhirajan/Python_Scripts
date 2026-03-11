@@ -1,0 +1,13 @@
+ipykernel
+pyspark
+delta-spark
+pandas
+numpy
+openpyxl
+selenium
+XlsxWriter
+tqdm
+pyqrcode
+rembg
+pyscreenrec
+rapidfuzz
