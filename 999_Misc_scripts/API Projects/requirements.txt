@@ -1,17 +1,9 @@
 ipykernel
-pip
-pyspark
-delta-spark
 pandas
 numpy
 openpyxl
-selenium
 XlsxWriter
 tqdm
-pyqrcode
-rembg
-pyscreenrec
-rapidfuzz
 googlemaps
 python-dotenv
 openai
