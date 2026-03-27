@@ -16,3 +16,8 @@ venv\Scripts\activate     # Windows
 
 pip install --upgrade pip
 pip install -r requirements.txt
+
+
+
+git rm -r --cached 003_Scraping_scripts
+git commit -m "Stop tracking scraping scripts folder"
