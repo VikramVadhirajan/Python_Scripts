@@ -16,3 +16,7 @@ googlemaps
 python-dotenv
 openai
 google
+# pdfplumber
+tabula-py
+# paddlepaddle==2.6.1
+# paddleocr==2.7.0.3
