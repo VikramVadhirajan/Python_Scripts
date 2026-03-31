@@ -1,7 +1,7 @@
 .venv/
 999_Misc_scripts/API Projects/keys.env
 003_Scraping_scripts/   
-002_File_Manipulation/
+# 002_File_Manipulation/
 
 #if the file/ folder  is already commited use this 
 #git rm -r --cached folder name
