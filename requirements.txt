@@ -20,3 +20,5 @@ google
 tabula-py
 # paddlepaddle==2.6.1
 # paddleocr==2.7.0.3
+plotly
+streamlit
