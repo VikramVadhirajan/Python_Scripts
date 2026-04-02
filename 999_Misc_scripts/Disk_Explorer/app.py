@@ -66,7 +66,7 @@ with st.sidebar:
     st.header("Settings")
     directory = st.text_input(
         "Directory path",
-        value=r"C:\Users\vikram.vadhirajan\OneDrive - Trico\FBG\01_DRA"
+        value=r"C:\07_Python_Projects"
     )
 
     st.markdown("**Exclude folders** (one per line)")
@@ -141,37 +141,41 @@ try:
 except Exception as e:
     st.error(f"Treemap error: {e}")
 
+col1, col2 = st.columns([2,1])
+
+with col1:
+
+    # ── Top 10 largest files ──────────────────────────────────────────────────────
+    st.subheader("🔝 Top 10 Largest Files")
+    top10 = (
+        df[["path", "size", "file_size_readable", "file_type"]]
+        .nlargest(10, "size")
+        .reset_index(drop=True)
+    )
+    top10.index += 1
+    st.dataframe(top10, use_container_width=True)
+
+
+with col2:
+    # ── File type breakdown ───────────────────────────────────────────────────────
+    st.subheader("📊 Size by File Type")
+    type_summary = (
+        df.groupby("file_type")["size"]
+        .sum()
+        .reset_index()
+        .sort_values("size", ascending=True)
+    )
+    type_summary["readable"] = type_summary["size"].apply(format_size)
+
+    bar = px.bar(
+        type_summary.head(20),
+        y="file_type",
+        x="size",
+        text="readable",
+        labels={"size": "Total Size (bytes)", "file_type": "File Type"},
+    )
+    bar.update_traces(textposition="outside")
+    bar.update_layout(margin=dict(t=20, l=10, r=10, b=40), height=400)
+    st.plotly_chart(bar, use_container_width=True)
+
 st.divider()
-
-# ── Top 10 largest files ──────────────────────────────────────────────────────
-st.subheader("🔝 Top 10 Largest Files")
-top10 = (
-    df[["path", "size", "file_size_readable", "file_type"]]
-    .nlargest(10, "size")
-    .reset_index(drop=True)
-)
-top10.index += 1
-st.dataframe(top10, use_container_width=True)
-
-st.divider()
-
-# ── File type breakdown ───────────────────────────────────────────────────────
-st.subheader("📊 Size by File Type")
-type_summary = (
-    df.groupby("file_type")["size"]
-    .sum()
-    .reset_index()
-    .sort_values("size", ascending=False)
-)
-type_summary["readable"] = type_summary["size"].apply(format_size)
-
-bar = px.bar(
-    type_summary.head(20),
-    x="file_type",
-    y="size",
-    text="readable",
-    labels={"size": "Total Size (bytes)", "file_type": "File Type"},
-)
-bar.update_traces(textposition="outside")
-bar.update_layout(margin=dict(t=20, l=10, r=10, b=40), height=400)
-st.plotly_chart(bar, use_container_width=True)
