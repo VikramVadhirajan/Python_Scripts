@@ -32,7 +32,7 @@ dest= Path(r"C:\99_CopyHDD")
 
 ignore_folders = ['.venv', '__pycache__', '.git', 'node_modules']
 ignore = shutil.ignore_patterns(ignore_folders)
-
+ignore_extensions = [".mov"]
 
 # In[5]:
 
@@ -72,6 +72,9 @@ for source in Sources:
         
         if any(folder in item.parts for folder in ignore_folders):
             continue
+
+        if item.suffix in ignore_extensions:
+            continue    
 
         relative_path = item.relative_to(source)
         first_folder = relative_path.parts[0]
@@ -147,3 +150,4 @@ print(f"Backup completed successfully! copied \t \t :{directory_Size(dest)} of D
             
 # print(f"Backup completed successfully! copied \t \t :{directory_Size(dest)} of Data")
 
+os.startfile(dest)
