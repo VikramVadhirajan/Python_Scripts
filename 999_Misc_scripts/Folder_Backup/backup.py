@@ -17,7 +17,7 @@ import os
 # In[2]:
 
 # paths = input("Enter folder paths separated by comma:\n")
-paths=r"C:\12_Portfolio_Website,C:\13_Tableau,C:\01_LogicJunior,C:\04_Udemy,C:\05_Simplilearn,C:\06_Freelancing,C:\07_Python_Projects,C:\08_Python_Scripts,C:\09_Power BI files,C:\10_SQL_Files,C:\11_Excel_Files"
+paths=r"C:\12_Portfolio_Website,C:\13_Tableau,C:\01_LogicJunior,C:\04_Udemy,C:\05_Simplilearn,C:\06_Freelancing,C:\07_Python_Projects,C:\08_Python_Scripts,C:\09_Power BI files,C:\10_SQL_Files,C:\11_Excel_Files,C:\14_Langchain"
 Sources = [p.strip() for p in paths.split(",")]
 
 
