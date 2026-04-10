@@ -17,7 +17,7 @@ import os
 # In[2]:
 
 # paths = input("Enter folder paths separated by comma:\n")
-paths=r"C:\12_Portfolio_Website,C:\13_Tableau,C:\01_LogicJunior,C:\04_Udemy,C:\05_Simplilearn,C:\06_Freelancing,C:\07_Python_Projects,C:\08_Python_Scripts,C:\09_Power BI files,C:\10_SQL_Files,C:\11_Excel_Files,C:\14_Langchain"
+paths=r"C:\12_Portfolio_Website,C:\13_Tableau,C:\01_LogicJunior,C:\02_Personal_Documents,C:\04_Udemy,C:\05_Simplilearn,C:\06_Freelancing,C:\07_Python_Projects,C:\08_Python_Scripts,C:\09_Power BI files,C:\10_SQL_Files,C:\11_Excel_Files,C:\14_Langchain"
 Sources = [p.strip() for p in paths.split(",")]
 
 
@@ -30,10 +30,10 @@ dest= Path(r"C:\99_CopyHDD")
 # In[4]:
 
 
-ignore_folders = ['.venv', '__pycache__', '.git', 'node_modules']
+ignore_folders = ['.venv', '__pycache__', '.git', 'node_modules','images_from_videos']
 ignore = shutil.ignore_patterns(ignore_folders)
+ignore_keywords=["Frames"]
 ignore_extensions = [".mov"]
-
 # In[5]:
 
 
@@ -72,21 +72,12 @@ for source in Sources:
         
         if any(folder in item.parts for folder in ignore_folders):
             continue
-
         if item.suffix in ignore_extensions:
             continue    
-
+        if any(keyword in part for part in item.parts for keyword in ignore_keywords):
+            continue
         relative_path = item.relative_to(source)
         first_folder = relative_path.parts[0]
-
-        # Ignore files directly inside source
-        # if len(relative_path.parts) > 1:
-        #     first_folder = relative_path.parts[0]
-
-        #     if first_folder != last_folder:
-        #         print(f"\nProcessing: {first_folder}")
-        #         last_folder = first_folder
-
 
         target = dest/Parent_Project / item.relative_to(source)
 
@@ -150,4 +141,6 @@ print(f"Backup completed successfully! copied \t \t :{directory_Size(dest)} of D
             
 # print(f"Backup completed successfully! copied \t \t :{directory_Size(dest)} of Data")
 
+
 os.startfile(dest)
+
