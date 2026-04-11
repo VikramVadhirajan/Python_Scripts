@@ -3,6 +3,7 @@ pip
 pyspark
 delta-spark
 pandas
+polars
 numpy
 openpyxl
 selenium
