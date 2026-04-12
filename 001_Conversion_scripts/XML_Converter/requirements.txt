@@ -4,3 +4,4 @@ ipykernel
 pip
 streamlit
 openpyxl
+xlsxwriter
