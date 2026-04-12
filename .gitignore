@@ -5,7 +5,7 @@
 **.env
 
 001_Conversion_scripts/XML_Converter/Pies.xml
-001_Conversion_scripts/XML_Converter/ACES_2.xml
+001_Conversion_scripts/XML_Converter/ACES.xml
 001_Conversion_scripts/output.xlsx
 #if the file/ folder  is already commited use this 
 #git rm -r --cached folder name
