@@ -1,0 +1,31 @@
+[project]
+name = "08-python-scripts"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "delta-spark>=4.2.0",
+    "google>=3.0.0",
+    "googlemaps>=4.10.0",
+    "ipykernel>=7.2.0",
+    "nbconvert>=7.17.1",
+    "numpy>=2.4.4",
+    "openai>=2.31.0",
+    "openpyxl>=3.1.5",
+    "pandas>=3.0.2",
+    "pip>=26.0.1",
+    "plotly>=6.7.0",
+    "polars>=1.39.3",
+    "pyqrcode>=1.2.1",
+    "pyscreenrec>=0.5",
+    "pyspark>=4.1.1",
+    "python-dotenv>=1.2.2",
+    "rapidfuzz>=3.14.5",
+    "rembg>=2.0.75",
+    "selenium>=4.43.0",
+    "streamlit>=1.56.0",
+    "tabula-py>=2.10.0",
+    "tqdm>=4.67.3",
+    "xlsxwriter>=3.2.9",
+]
