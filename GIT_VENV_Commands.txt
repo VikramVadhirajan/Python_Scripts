@@ -25,3 +25,10 @@ git commit -m "Stop tracking scraping scripts folder"
 
 
 jupyter nbconvert --to script notebook_name.ipynb
+
+
+
+
+uv init 
+uv venv # By default it creates .venv 
+uv add -r requirements.txt
