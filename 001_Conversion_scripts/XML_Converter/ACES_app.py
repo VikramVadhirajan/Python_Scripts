@@ -94,11 +94,11 @@ if uploaded_file:
 
     if file_type.startswith("CSV"):
         data = convert_to_csv(df)
-        file_name = "VCdb_output.csv"
+        file_name = "ACES_output.csv"
 
     else:
         data = convert_to_excel(df)
-        file_name = "VCdb_output.xlsx"
+        file_name = "ACES_output.xlsx"
 
     downloaded = st.download_button(
         "Download file",
