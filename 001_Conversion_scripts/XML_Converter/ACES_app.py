@@ -61,6 +61,18 @@ def convert_to_excel(df):
     return output
 
 
+@st.cache_data
+def convert_to_csv(df):
+    return df.to_csv(index=False).encode("utf-8")
+
+
+@st.cache_data
+def convert_to_excel(df):
+    buffer = BytesIO()
+    df.to_excel(buffer, index=False)
+    buffer.seek(0)
+    return buffer
+
 if uploaded_file:
 
     with st.spinner("Parsing XML..."):
@@ -73,11 +85,29 @@ if uploaded_file:
 
     st.write(f"Total Rows: {len(df)}")
 
-    excel_file = convert_to_excel(df)
+    st.subheader("Download Data")
 
-    st.download_button(
-        label="Download Excel File",
-        data=excel_file,
-        file_name="ACES_Output.xlsx",
-        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    file_type = st.radio(
+            "Download format",
+            ["CSV (recommended ⚡)", "Excel"]
+            )
+
+    if file_type.startswith("CSV"):
+        data = convert_to_csv(df)
+        file_name = "VCdb_output.csv"
+
+    else:
+        data = convert_to_excel(df)
+        file_name = "VCdb_output.xlsx"
+
+    downloaded = st.download_button(
+        "Download file",
+        data=data,
+        file_name=file_name
     )
+
+    if downloaded:
+        st.success("✅ File Downloadeed successfully.")
+    
+else:
+    st.info("Upload an ACES XML file to convert it into Excel.")
