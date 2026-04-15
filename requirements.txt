@@ -24,3 +24,4 @@ tabula-py
 plotly
 streamlit
 nbconvert
+jupytext
