@@ -29,6 +29,15 @@ jupyter nbconvert --to script notebook_name.ipynb
 
 
 
+colne a notebook to a python 
+
+jupytext --to py notebook.ipynb
+
+jupytext --set-formats ipynb,py:percent notebook.ipynb
+
+
+
+
 uv init 
 uv venv # By default it creates .venv 
 uv add -r requirements.txt
