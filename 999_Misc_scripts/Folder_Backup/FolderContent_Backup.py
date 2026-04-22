@@ -43,7 +43,7 @@ r"C:\14_Langchain"]
 
 
 # %%
-# paths=r"C:\01_LogicJunior,C:\02_Personal_Documents,C:\03_FBG_Work,C:\04_Udemy,C:\05_Simplilearn,C:\06_Freelancing,C:\07_Python_Projects,C:\08_Python_Scripts,C:\09_Power BI files,C:\10_SQL_Files,C:\11_Excel_Files,C:\12_Portfolio_Website,C:\13_Tableau,C:\14_Langchain"
+#paths=r"C:\01_LogicJunior,C:\02_Personal_Documents,C:\03_FBG_Work,C:\04_Udemy,C:\05_Simplilearn,C:\06_Freelancing,C:\07_Python_Projects,C:\08_Python_Scripts,C:\09_Power BI files,C:\10_SQL_Files,C:\11_Excel_Files,C:\12_Portfolio_Website,C:\13_Tableau,C:\14_Langchain,C:\15_Obsidian_Notes"
 # paths = input("Enter folder paths separated by comma:\n")
 # Sources = [p.strip() for p in paths.split(",")]
 
