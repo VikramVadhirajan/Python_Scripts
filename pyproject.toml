@@ -11,6 +11,7 @@ dependencies = [
     "ipykernel>=7.2.0",
     "jupytext>=1.19.1",
     "nbconvert>=7.17.1",
+    "nltk>=3.9.4",
     "numpy>=2.4.4",
     "openai>=2.31.0",
     "openpyxl>=3.1.5",
@@ -27,6 +28,7 @@ dependencies = [
     "selenium>=4.43.0",
     "streamlit>=1.56.0",
     "tabula-py>=2.10.0",
+    "textblob>=0.20.0",
     "tqdm>=4.67.3",
     "xlsxwriter>=3.2.9",
 ]
