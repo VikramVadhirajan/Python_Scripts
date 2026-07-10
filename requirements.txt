@@ -27,3 +27,4 @@ nbconvert
 jupytext
 nltk
 textblob
+moviepy
