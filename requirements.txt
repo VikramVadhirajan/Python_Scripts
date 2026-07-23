@@ -28,3 +28,4 @@ jupytext
 nltk
 textblob
 moviepy
+qrcode
