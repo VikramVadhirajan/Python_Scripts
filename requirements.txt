@@ -29,3 +29,5 @@ nltk
 textblob
 moviepy
 qrcode
+SQLAlchemy
+mysql-connector-python
